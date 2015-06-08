@@ -35,6 +35,7 @@ if __name__ == '__main__':
     clientsocket.connect(addr)
  
     while 1:
+        #currently blocks a close if the server has killed the connection
         data = raw_input(">> ")
         if not data:
             break
@@ -47,7 +48,7 @@ if __name__ == '__main__':
                 print "Maximum number of clients reached. Exiting"
                 clientsocket.close()
                 sys.exit() 
-            elif data == "REQUEST": #data is comming...
+            elif data == "REQUEST": #request data
                 print "data is coming..."
                 #receive data from server
                 while ']' not in arraystring:
