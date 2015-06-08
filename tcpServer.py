@@ -39,6 +39,11 @@ if __name__ == "__main__":
         clientCount = int(sys.argv[2])
     except:
         clientCount = 2
+    #array size
+    try:
+        arraylength = int(sys.argv[3])   #Length of array to be sorted 
+    except:
+        arraylength = 100000   #Length of array to be sorted 
 
     print "port: " + str(port) + " clients: " + str(clientCount)
     host = 'localhost'
@@ -62,7 +67,6 @@ if __name__ == "__main__":
     print "Setting up data for processing..."
     resultArray = []
     #Create an array to be sorted 
-    arraylength = 1000000   #Length of array to be sorted 
     print 'Length of array is', arraylength 
     array = range(arraylength)  #Creates array 
     random.shuffle(array)    #Jumbles up array 

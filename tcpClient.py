@@ -14,9 +14,18 @@ def process(clientsocket, data):
     clientsocket.sendall(data)
 
 if __name__ == '__main__':
-    arraystring = ''
-    host = 'localhost'
-    port = 55555
+
+    try:
+        port = int(sys.argv[1])
+    except:
+        port = 55555
+
+    try:
+        host = sys.argv[2]
+    except:
+        host = 'localhost'
+
+    arraystring = ''  
     buf = 1024
  
     addr = (host, port)
