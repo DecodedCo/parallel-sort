@@ -7,3 +7,6 @@ Parallel Sort Processing Example in Python (for Raspberry Pi eventually)
 	* The array size will default to 100000
 * On the client connect to the server with `python tcpClient.py [port] [host]`
 
+### TODO:
+
+* The final sort could be threaded back to the clients.
