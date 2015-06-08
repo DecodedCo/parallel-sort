@@ -5,6 +5,7 @@
 __pycache__/
 *.py[cod]
 *.pyc
+*.txt
 
 # C extensions
 *.so
