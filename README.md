@@ -25,4 +25,4 @@ The server will then start sorting the data it has. See TODO for more details on
 ### TODO:
 
 * The final sort could be threaded back to the clients.
-* Sort should only be possible when all of the data has been returned. Currently this could potentially cause a race condition
+* `sort` should only be possible when all of the data has been returned. Currently this could potentially cause a race condition
