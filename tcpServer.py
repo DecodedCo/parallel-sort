@@ -6,6 +6,8 @@ from Handler import handler
 import sys
 import MergeSort   #Imports mergesort functions 
 
+#create our global timing variable
+
 #breaks down array into n sections where n is the number of processors 
 def breakArray(array, n): 
 
@@ -86,7 +88,7 @@ if __name__ == "__main__":
             thread.start_new_thread(errorReturn, (clientsocket, "MAXIMUM clients: "+str(clientCount)))
         else:
             clientsocket, clientaddr = serversocket.accept()
-            thread.start_new_thread(handler, (clientsocket, sections[i], clientaddr, resultArray, len(array), lock))
+            thread.start_new_thread(handler, (clientsocket, sections[i], clientaddr, resultArray, len(array), lock, clientCount))
             i += 1
             
     serversocket.close()
