@@ -1,18 +1,21 @@
 from ClientThread import clientThread 
 import MergeSort   #Imports mergesort functions 
 import json
+import time
+
 arrays_old = [] # need two arrays to copy changes to 
 arrays_new = [] # and then reset the original
 
 def handler(clientsocket, section, clientaddr, resultArray, length, lock, clientCount):
     print "Accepted connection from: ", clientaddr
-    global arrays_old, arrays_new
+    global arrays_old, arrays_new, start_time
 
     while 1:
         data = clientsocket.recv(1024)
         if not data:
             break
         if data == "request":
+            start_time = time.time() #reset the timer
             msg = "REQUEST"
             clientsocket.send(msg)
             #passing section directly from handler
@@ -61,6 +64,8 @@ def processData():
             f = open("sorted.txt","w")
             json.dump(resultArray,f)
             f.close()
+            time_taken = time.time() - start_time
+            print "Sorting completed in ", time_taken, " seconds"
             running = False
         else:
             print "in else..."

@@ -5,9 +5,9 @@ import threading
 from Handler import handler
 import sys
 import MergeSort   #Imports mergesort functions 
-
+import time
 #create our global timing variable
-
+start_time = time.time()
 #breaks down array into n sections where n is the number of processors 
 def breakArray(array, n): 
 
