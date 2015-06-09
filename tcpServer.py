@@ -3,6 +3,7 @@ import thread
 import random 
 import threading
 from Handler import handler
+import sys
 import MergeSort   #Imports mergesort functions 
 
 #breaks down array into n sections where n is the number of processors 
@@ -46,7 +47,7 @@ if __name__ == "__main__":
         arraylength = 100000   #Length of array to be sorted 
 
     print "port: " + str(port) + " clients: " + str(clientCount)
-    host = 'localhost'
+    host = ''
     
     buf = 1024
  
